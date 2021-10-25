@@ -40,10 +40,18 @@ def testinsert():
     tests.to_sql("test", engine, index=False, if_exists="replace")
 
 
-def select():
-    df = pd.read_sql("select * from fish", con=engine)
-    print(df)
+def trainselect():
+    traindf = pd.read_sql("select * from train", con=engine)
+    print(traindf)
 
 
-traininsert()
-testinsert()
+def testselect():
+    testdf = pd.read_sql("select * from test", con=engine)
+    print(testdf)
+
+# traininsert()
+# testinsert()
+
+
+trainselect()
+testselect()
